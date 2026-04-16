@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowTask — Дашборд</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <div class="app-layout">
+
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <div class="logo-icon">
+            <i class="bi bi-lightning-fill"></i>
+          </div>
+          <span class="logo-text">FlowTask</span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-section-label">Главное</div>
+          <a href="#" class="nav-item active">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Дашборд</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="bi bi-check2-square"></i>
+            <span>Мои задачи</span>
+            <span class="nav-badge">4</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="bi bi-folder2-open"></i>
+            <span>Проекты</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="bi bi-people-fill"></i>
+            <span>Команда</span>
+          </a>
+
+          <div class="nav-section-label" style="margin-top: 24px;">Инструменты</div>
+          <a href="#" class="nav-item">
+            <i class="bi bi-calendar3"></i>
+            <span>Календарь</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="bi bi-bar-chart-line-fill"></i>
+            <span>Отчёты</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="bi bi-bell-fill"></i>
+            <span>Уведомления</span>
+            <span class="nav-badge nav-badge--red">2</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="#" class="nav-item">
+            <i class="bi bi-gear-fill"></i>
+            <span>Настройки</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+
+        <header class="topbar">
+          <div class="topbar-left">
+            <div class="page-title">
+              <h1>Дашборд</h1>
+              <p>Среда, 16 апреля 2026</p>
+            </div>
+          </div>
+          <div class="topbar-right">
+            <button class="topbar-btn">
+              <i class="bi bi-search"></i>
+            </button>
+            <button class="topbar-btn notification-btn">
+              <i class="bi bi-bell"></i>
+              <span class="notif-dot"></span>
+            </button>
+            <div class="topbar-divider"></div>
+            <div class="user-info">
+              <div class="user-details">
+                <span class="user-name">Алексей Морозов</span>
+                <span class="user-role">Product Designer</span>
+              </div>
+              <div class="avatar">
+                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&dpr=1" alt="Аватар" />
+                <span class="avatar-status"></span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="dashboard-content">
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-icon stat-icon--blue">
+                <i class="bi bi-check2-all"></i>
+              </div>
+              <div class="stat-body">
+                <span class="stat-value">12</span>
+                <span class="stat-label">Завершено сегодня</span>
+              </div>
+              <div class="stat-trend trend-up"><i class="bi bi-arrow-up-short"></i>+3</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon stat-icon--amber">
+                <i class="bi bi-hourglass-split"></i>
+              </div>
+              <div class="stat-body">
+                <span class="stat-value">4</span>
+                <span class="stat-label">В работе</span>
+              </div>
+              <div class="stat-trend trend-neutral"><i class="bi bi-dash"></i>0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon stat-icon--green">
+                <i class="bi bi-folder2-open"></i>
+              </div>
+              <div class="stat-body">
+                <span class="stat-value">6</span>
+                <span class="stat-label">Активных проектов</span>
+              </div>
+              <div class="stat-trend trend-up"><i class="bi bi-arrow-up-short"></i>+1</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon stat-icon--red">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+              </div>
+              <div class="stat-body">
+                <span class="stat-value">2</span>
+                <span class="stat-label">Просрочено</span>
+              </div>
+              <div class="stat-trend trend-down"><i class="bi bi-arrow-down-short"></i>-1</div>
+            </div>
+          </div>
+
+          <div class="content-grid">
+
+            <div class="col-tasks">
+              <div class="section-card">
+                <div class="section-card-header">
+                  <div>
+                    <h2 class="section-title">Задачи на сегодня</h2>
+                    <p class="section-subtitle" id="pendingCount">4 задачи не выполнены</p>
+                  </div>
+                  <button class="btn btn-sm btn-add">
+                    <i class="bi bi-plus-lg"></i> Добавить
+                  </button>
+                </div>
+
+                <div class="tasks-list" id="tasksList">
+
+                  <div class="task-item" data-task-id="1">
+                    <div class="task-check-area">
+                      <button class="task-check-btn" onclick="toggleTask(this)" title="Отметить выполненным">
+                        <i class="bi bi-circle"></i>
+                      </button>
+                    </div>
+                    <div class="task-body">
+                      <span class="task-title">Подготовить прототип экрана онбординга</span>
+                      <div class="task-meta">
+                        <span class="task-tag tag-design">Дизайн</span>
+                        <span class="task-time"><i class="bi bi-clock"></i> до 14:00</span>
+                      </div>
+                    </div>
+                    <div class="task-priority priority-high"><i class="bi bi-flag-fill"></i></div>
+                  </div>
+
+                  <div class="task-item" data-task-id="2">
+                    <div class="task-check-area">
+                      <button class="task-check-btn" onclick="toggleTask(this)" title="Отметить выполненным">
+                        <i class="bi bi-circle"></i>
+                      </button>
+                    </div>
+                    <div class="task-body">
+                      <span class="task-title">Провести ревью pull request #47</span>
+                      <div class="task-meta">
+                        <span class="task-tag tag-dev">Разработка</span>
+                        <span class="task-time"><i class="bi bi-clock"></i> до 16:00</span>
+                      </div>
+                    </div>
+                    <div class="task-priority priority-mid"><i class="bi bi-flag-fill"></i></div>
+                  </div>
+
+                  <div class="task-item task-item--done" data-task-id="3">
+                    <div class="task-check-area">
+                      <button class="task-check-btn task-check-btn--done" onclick="toggleTask(this)" title="Снять отметку">
+                        <i class="bi bi-check-circle-fill"></i>
+                      </button>
+                    </div>
+                    <div class="task-body">
+                      <span class="task-title">Написать техническое задание для модуля аналитики</span>
+                      <div class="task-meta">
+                        <span class="task-tag tag-docs">Документация</span>
+                        <span class="task-time task-time--done"><i class="bi bi-check2"></i> Выполнено</span>
+                      </div>
+                    </div>
+                    <div class="task-priority priority-low"><i class="bi bi-flag-fill"></i></div>
+                  </div>
+
+                  <div class="task-item" data-task-id="4">
+                    <div class="task-check-area">
+                      <button class="task-check-btn" onclick="toggleTask(this)" title="Отметить выполненным">
+                        <i class="bi bi-circle"></i>
+                      </button>
+                    </div>
+                    <div class="task-body">
+                      <span class="task-title">Синхронизация с командой маркетинга по лендингу</span>
+                      <div class="task-meta">
+                        <span class="task-tag tag-meeting">Встреча</span>
+                        <span class="task-time"><i class="bi bi-clock"></i> 17:30</span>
+                      </div>
+                    </div>
+                    <div class="task-priority priority-mid"><i class="bi bi-flag-fill"></i></div>
+                  </div>
+
+                  <div class="task-item" data-task-id="5">
+                    <div class="task-check-area">
+                      <button class="task-check-btn" onclick="toggleTask(this)" title="Отметить выполненным">
+                        <i class="bi bi-circle"></i>
+                      </button>
+                    </div>
+                    <div class="task-body">
+                      <span class="task-title">Обновить дизайн-систему: новые токены цвета</span>
+                      <div class="task-meta">
+                        <span class="task-tag tag-design">Дизайн</span>
+                        <span class="task-time task-time--overdue"><i class="bi bi-exclamation-circle"></i> Просрочено</span>
+                      </div>
+                    </div>
+                    <div class="task-priority priority-high"><i class="bi bi-flag-fill"></i></div>
+                  </div>
+
+                </div>
+
+                <div class="section-card-footer">
+                  <a href="#" class="view-all-link">Все задачи <i class="bi bi-arrow-right"></i></a>
+                  <span class="task-counter" id="taskCounter">1 из 5 выполнено</span>
+                </div>
+              </div>
+
+              <div class="section-card progress-card">
+                <h2 class="section-title">Прогресс недели</h2>
+                <p class="section-subtitle" style="margin-bottom: 20px;">23 из 30 задач завершены</p>
+                <div class="week-progress">
+                  <div class="week-bar-wrap">
+                    <span class="week-label">Пн</span>
+                    <div class="week-bar-track">
+                      <div class="week-bar-fill" style="height: 100%"></div>
+                    </div>
+                    <span class="week-count">6/6</span>
+                  </div>
+                  <div class="week-bar-wrap">
+                    <span class="week-label">Вт</span>
+                    <div class="week-bar-track">
+                      <div class="week-bar-fill" style="height: 83%"></div>
+                    </div>
+                    <span class="week-count">5/6</span>
+                  </div>
+                  <div class="week-bar-wrap">
+                    <span class="week-label">Ср</span>
+                    <div class="week-bar-track">
+                      <div class="week-bar-fill week-bar-fill--today" style="height: 60%"></div>
+                    </div>
+                    <span class="week-count">3/5</span>
+                  </div>
+                  <div class="week-bar-wrap">
+                    <span class="week-label">Чт</span>
+                    <div class="week-bar-track">
+                      <div class="week-bar-fill week-bar-fill--future" style="height: 0%"></div>
+                    </div>
+                    <span class="week-count">0/7</span>
+                  </div>
+                  <div class="week-bar-wrap">
+                    <span class="week-label">Пт</span>
+                    <div class="week-bar-track">
+                      <div class="week-bar-fill week-bar-fill--future" style="height: 0%"></div>
+                    </div>
+                    <span class="week-count">0/6</span>
+                  </div>
+                </div>
+                <div class="progress-overall">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="progress-label">Общий прогресс</span>
+                    <span class="progress-pct">77%</span>
+                  </div>
+                  <div class="progress" style="height: 8px; border-radius: 99px;">
+                    <div class="progress-bar" role="progressbar" style="width: 77%; border-radius: 99px;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-projects">
+              <div class="section-card">
+                <div class="section-card-header">
+                  <div>
+                    <h2 class="section-title">Проекты</h2>
+                    <p class="section-subtitle">Активные проекты команды</p>
+                  </div>
+                  <div class="header-actions">
+                    <button class="btn btn-sm btn-outline-secondary me-2 filter-btn">
+                      <i class="bi bi-funnel"></i> Фильтр
+                    </button>
+                    <button class="btn btn-sm btn-add">
+                      <i class="bi bi-plus-lg"></i> Новый
+                    </button>
+                  </div>
+                </div>
+
+                <div class="table-wrapper">
+                  <table class="projects-table">
+                    <thead>
+                      <tr>
+                        <th>Проект</th>
+                        <th>Статус</th>
+                        <th>Прогресс</th>
+                        <th>Дедлайн</th>
+                        <th>Команда</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="project-name-cell">
+                            <div class="project-dot" style="background: #3b82f6"></div>
+                            <div>
+                              <div class="project-name">FlowTask — MVP</div>
+                              <div class="project-tasks-count">18 задач</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><span class="status-badge status-active">В работе</span></td>
+                        <td>
+                          <div class="table-progress">
+                            <div class="table-progress-bar">
+                              <div class="table-progress-fill" style="width: 72%"></div>
+                            </div>
+                            <span class="table-progress-label">72%</span>
+                          </div>
+                        </td>
+                        <td><span class="deadline-text deadline-soon">28 апр</span></td>
+                        <td>
+                          <div class="team-avatars">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <div class="avatar-more">+2</div>
+                          </div>
+                        </td>
+                        <td><button class="table-action-btn"><i class="bi bi-three-dots"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="project-name-cell">
+                            <div class="project-dot" style="background: #10b981"></div>
+                            <div>
+                              <div class="project-name">Редизайн лендинга</div>
+                              <div class="project-tasks-count">9 задач</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><span class="status-badge status-review">Ревью</span></td>
+                        <td>
+                          <div class="table-progress">
+                            <div class="table-progress-bar">
+                              <div class="table-progress-fill" style="width: 90%"></div>
+                            </div>
+                            <span class="table-progress-label">90%</span>
+                          </div>
+                        </td>
+                        <td><span class="deadline-text">20 апр</span></td>
+                        <td>
+                          <div class="team-avatars">
+                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                          </div>
+                        </td>
+                        <td><button class="table-action-btn"><i class="bi bi-three-dots"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="project-name-cell">
+                            <div class="project-dot" style="background: #f59e0b"></div>
+                            <div>
+                              <div class="project-name">Мобильное приложение</div>
+                              <div class="project-tasks-count">31 задача</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><span class="status-badge status-active">В работе</span></td>
+                        <td>
+                          <div class="table-progress">
+                            <div class="table-progress-bar">
+                              <div class="table-progress-fill" style="width: 41%"></div>
+                            </div>
+                            <span class="table-progress-label">41%</span>
+                          </div>
+                        </td>
+                        <td><span class="deadline-text deadline-danger">10 мая</span></td>
+                        <td>
+                          <div class="team-avatars">
+                            <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <div class="avatar-more">+4</div>
+                          </div>
+                        </td>
+                        <td><button class="table-action-btn"><i class="bi bi-three-dots"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="project-name-cell">
+                            <div class="project-dot" style="background: #8b5cf6"></div>
+                            <div>
+                              <div class="project-name">API-интеграции v2</div>
+                              <div class="project-tasks-count">14 задач</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><span class="status-badge status-hold">Пауза</span></td>
+                        <td>
+                          <div class="table-progress">
+                            <div class="table-progress-bar">
+                              <div class="table-progress-fill" style="width: 55%"></div>
+                            </div>
+                            <span class="table-progress-label">55%</span>
+                          </div>
+                        </td>
+                        <td><span class="deadline-text">1 июн</span></td>
+                        <td>
+                          <div class="team-avatars">
+                            <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                          </div>
+                        </td>
+                        <td><button class="table-action-btn"><i class="bi bi-three-dots"></i></button></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="project-name-cell">
+                            <div class="project-dot" style="background: #ec4899"></div>
+                            <div>
+                              <div class="project-name">Аналитика и отчёты</div>
+                              <div class="project-tasks-count">7 задач</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><span class="status-badge status-done">Завершён</span></td>
+                        <td>
+                          <div class="table-progress">
+                            <div class="table-progress-bar">
+                              <div class="table-progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="table-progress-label">100%</span>
+                          </div>
+                        </td>
+                        <td><span class="deadline-text">8 апр</span></td>
+                        <td>
+                          <div class="team-avatars">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                            <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=1" alt="" />
+                          </div>
+                        </td>
+                        <td><button class="table-action-btn"><i class="bi bi-three-dots"></i></button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="section-card-footer">
+                  <a href="#" class="view-all-link">Все проекты <i class="bi bi-arrow-right"></i></a>
+                  <span class="task-counter">6 активных проектов</span>
+                </div>
+              </div>
+
+              <div class="section-card">
+                <div class="section-card-header">
+                  <div>
+                    <h2 class="section-title">Активность команды</h2>
+                    <p class="section-subtitle">Последние действия</p>
+                  </div>
+                </div>
+                <div class="activity-feed">
+                  <div class="activity-item">
+                    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&dpr=1" class="activity-avatar" alt="" />
+                    <div class="activity-body">
+                      <div class="activity-text"><strong>Мария К.</strong> завершила задачу «Макет главной страницы»</div>
+                      <div class="activity-time">15 минут назад</div>
+                    </div>
+                    <div class="activity-icon activity-icon--green"><i class="bi bi-check-lg"></i></div>
+                  </div>
+                  <div class="activity-item">
+                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&dpr=1" class="activity-avatar" alt="" />
+                    <div class="activity-body">
+                      <div class="activity-text"><strong>Дмитрий В.</strong> создал задачу «Настройка CI/CD»</div>
+                      <div class="activity-time">42 минуты назад</div>
+                    </div>
+                    <div class="activity-icon activity-icon--blue"><i class="bi bi-plus-lg"></i></div>
+                  </div>
+                  <div class="activity-item">
+                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&dpr=1" class="activity-avatar" alt="" />
+                    <div class="activity-body">
+                      <div class="activity-text"><strong>Анна Л.</strong> оставила комментарий в проекте «API-интеграции»</div>
+                      <div class="activity-time">1 час назад</div>
+                    </div>
+                    <div class="activity-icon activity-icon--amber"><i class="bi bi-chat-dots-fill"></i></div>
+                  </div>
+                  <div class="activity-item">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&dpr=1" class="activity-avatar" alt="" />
+                    <div class="activity-body">
+                      <div class="activity-text"><strong>Алексей М.</strong> обновил статус проекта «Редизайн лендинга»</div>
+                      <div class="activity-time">2 часа назад</div>
+                    </div>
+                    <div class="activity-icon activity-icon--gray"><i class="bi bi-arrow-repeat"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
